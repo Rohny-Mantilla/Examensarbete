@@ -18,21 +18,21 @@ export const MovieDetails = ({fullMovie, cast}: Props) => {
       {/* Detalles */}
       <View style={{marginHorizontal: 20}}>
         <View style={{flexDirection: 'row'}}>
-          <Icon name="star-outline" color="grey" size={16} />
+          <Icon name="star-outline" color="#B8870C" size={16} />
           <Text> {fullMovie.vote_average.toFixed(1)}</Text>
           <Text style={{marginLeft: 5}}>
             {' '}
             - {fullMovie.genres.map(g => g.name).join(', ')}{' '}
           </Text>
         </View>
-        {/* Historia*/}
+        {/* Overview*/}
         <Text style={{fontSize: 24, marginTop: 10, fontWeight: 'bold'}}>
-          Historia
+          Overview
         </Text>
         <Text style={{fontSize: 15}}>{fullMovie.overview}</Text>
-        {/* Presupuesto*/}
+        {/* Budget*/}
         <Text style={{fontSize: 24, marginTop: 10, fontWeight: 'bold'}}>
-          Presupuesto
+          Budget
         </Text>
         <Text style={{fontSize: 18}}>
           {currencyFormatter.format(fullMovie.budget, {code: 'USD'})}
@@ -48,7 +48,7 @@ export const MovieDetails = ({fullMovie, cast}: Props) => {
             fontWeight: 'bold',
             marginHorizontal: 20,
           }}>
-          Actores
+          Top Billed Cast
         </Text>
 
         <FlatList
